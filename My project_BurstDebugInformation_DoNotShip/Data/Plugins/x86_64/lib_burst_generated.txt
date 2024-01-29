@@ -1,0 +1,320 @@
+Library: C:\Users\matth\My project\Temp\StagingArea\Data\Plugins\x86_64\lib_burst_generated
+--platform=Windows
+--backend=burst-llvm-14
+--target=X64_SSE2
+--global-safety-checks-setting=Off
+--meta-data-generation=False
+--dump=Function
+--float-precision=Standard
+--compilation-defines=UNITY_2021_3_20
+--compilation-defines=UNITY_2021_3
+--compilation-defines=UNITY_2021
+--compilation-defines=UNITY_5_3_OR_NEWER
+--compilation-defines=UNITY_5_4_OR_NEWER
+--compilation-defines=UNITY_5_5_OR_NEWER
+--compilation-defines=UNITY_5_6_OR_NEWER
+--compilation-defines=UNITY_2017_1_OR_NEWER
+--compilation-defines=UNITY_2017_2_OR_NEWER
+--compilation-defines=UNITY_2017_3_OR_NEWER
+--compilation-defines=UNITY_2017_4_OR_NEWER
+--compilation-defines=UNITY_2018_1_OR_NEWER
+--compilation-defines=UNITY_2018_2_OR_NEWER
+--compilation-defines=UNITY_2018_3_OR_NEWER
+--compilation-defines=UNITY_2018_4_OR_NEWER
+--compilation-defines=UNITY_2019_1_OR_NEWER
+--compilation-defines=UNITY_2019_2_OR_NEWER
+--compilation-defines=UNITY_2019_3_OR_NEWER
+--compilation-defines=UNITY_2019_4_OR_NEWER
+--compilation-defines=UNITY_2020_1_OR_NEWER
+--compilation-defines=UNITY_2020_2_OR_NEWER
+--compilation-defines=UNITY_2020_3_OR_NEWER
+--compilation-defines=UNITY_2021_1_OR_NEWER
+--compilation-defines=UNITY_2021_2_OR_NEWER
+--compilation-defines=UNITY_2021_3_OR_NEWER
+--compilation-defines=PLATFORM_ARCH_64
+--compilation-defines=UNITY_64
+--compilation-defines=ENABLE_AR
+--compilation-defines=ENABLE_AUDIO
+--compilation-defines=ENABLE_CACHING
+--compilation-defines=ENABLE_CLOTH
+--compilation-defines=ENABLE_EVENT_QUEUE
+--compilation-defines=ENABLE_MICROPHONE
+--compilation-defines=ENABLE_MULTIPLE_DISPLAYS
+--compilation-defines=ENABLE_PHYSICS
+--compilation-defines=ENABLE_TEXTURE_STREAMING
+--compilation-defines=ENABLE_VIRTUALTEXTURING
+--compilation-defines=ENABLE_UNET
+--compilation-defines=ENABLE_LZMA
+--compilation-defines=ENABLE_UNITYEVENTS
+--compilation-defines=ENABLE_VR
+--compilation-defines=ENABLE_WEBCAM
+--compilation-defines=ENABLE_UNITYWEBREQUEST
+--compilation-defines=ENABLE_WWW
+--compilation-defines=ENABLE_CLOUD_SERVICES
+--compilation-defines=ENABLE_CLOUD_SERVICES_COLLAB
+--compilation-defines=ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS
+--compilation-defines=ENABLE_CLOUD_SERVICES_ADS
+--compilation-defines=ENABLE_CLOUD_SERVICES_USE_WEBREQUEST
+--compilation-defines=ENABLE_CLOUD_SERVICES_CRASH_REPORTING
+--compilation-defines=ENABLE_CLOUD_SERVICES_PURCHASING
+--compilation-defines=ENABLE_CLOUD_SERVICES_ANALYTICS
+--compilation-defines=ENABLE_CLOUD_SERVICES_UNET
+--compilation-defines=ENABLE_CLOUD_SERVICES_BUILD
+--compilation-defines=ENABLE_CLOUD_LICENSE
+--compilation-defines=ENABLE_EDITOR_HUB_LICENSE
+--compilation-defines=ENABLE_WEBSOCKET_CLIENT
+--compilation-defines=ENABLE_DIRECTOR_AUDIO
+--compilation-defines=ENABLE_DIRECTOR_TEXTURE
+--compilation-defines=ENABLE_MANAGED_JOBS
+--compilation-defines=ENABLE_MANAGED_TRANSFORM_JOBS
+--compilation-defines=ENABLE_MANAGED_ANIMATION_JOBS
+--compilation-defines=ENABLE_MANAGED_AUDIO_JOBS
+--compilation-defines=ENABLE_MANAGED_UNITYTLS
+--compilation-defines=INCLUDE_DYNAMIC_GI
+--compilation-defines=ENABLE_SCRIPTING_GC_WBARRIERS
+--compilation-defines=PLATFORM_SUPPORTS_MONO
+--compilation-defines=RENDER_SOFTWARE_CURSOR
+--compilation-defines=ENABLE_VIDEO
+--compilation-defines=ENABLE_ACCELERATOR_CLIENT_DEBUGGING
+--compilation-defines=PLATFORM_STANDALONE
+--compilation-defines=TEXTCORE_1_0_OR_NEWER
+--compilation-defines=PLATFORM_STANDALONE_WIN
+--compilation-defines=UNITY_STANDALONE_WIN
+--compilation-defines=UNITY_STANDALONE
+--compilation-defines=ENABLE_RUNTIME_GI
+--compilation-defines=ENABLE_MOVIES
+--compilation-defines=ENABLE_NETWORK
+--compilation-defines=ENABLE_NVIDIA
+--compilation-defines=ENABLE_CRUNCH_TEXTURE_COMPRESSION
+--compilation-defines=ENABLE_UNITY_GAME_SERVICES_ANALYTICS_SUPPORT
+--compilation-defines=ENABLE_OUT_OF_PROCESS_CRASH_HANDLER
+--compilation-defines=ENABLE_CLUSTER_SYNC
+--compilation-defines=ENABLE_CLUSTERINPUT
+--compilation-defines=PLATFORM_UPDATES_TIME_OUTSIDE_OF_PLAYER_LOOP
+--compilation-defines=GFXDEVICE_WAITFOREVENT_MESSAGEPUMP
+--compilation-defines=ENABLE_WEBSOCKET_HOST
+--compilation-defines=ENABLE_MONO
+--compilation-defines=NET_STANDARD_2_0
+--compilation-defines=NET_STANDARD
+--compilation-defines=NET_STANDARD_2_1
+--compilation-defines=NETSTANDARD
+--compilation-defines=NETSTANDARD2_1
+--compilation-defines=ENABLE_CUSTOM_RENDER_TEXTURE
+--compilation-defines=ENABLE_DIRECTOR
+--compilation-defines=ENABLE_LOCALIZATION
+--compilation-defines=ENABLE_SPRITES
+--compilation-defines=ENABLE_TERRAIN
+--compilation-defines=ENABLE_TILEMAP
+--compilation-defines=ENABLE_TIMELINE
+--compilation-defines=ENABLE_INPUT_SYSTEM
+--compilation-defines=ENABLE_LEGACY_INPUT_MANAGER
+--compilation-defines=TEXTCORE_FONT_ENGINE_1_5_OR_NEWER
+--compilation-defines=USE_INPUT_SYSTEM_POSE_CONTROL
+--compilation-defines=CSHARP_7_OR_LATER
+--compilation-defines=CSHARP_7_3_OR_NEWER
+--compilation-defines=PACKAGE_PHYSICS
+--compilation-defines=PACKAGE_PHYSICS2D
+--compilation-defines=PACKAGE_TILEMAP
+--compilation-defines=PACKAGE_ANIMATION
+--compilation-defines=PACKAGE_UITOOLKIT
+--compilation-defines=PACKAGE_INPUT_SYSTEM_EXISTS
+--compilation-defines=PACKAGE_INPUT_SYSTEM_1_2_0_OR_NEWER_EXISTS
+--compilation-defines=MODULE_AI_EXISTS
+--compilation-defines=MODULE_ANIMATION_EXISTS
+--compilation-defines=MODULE_PHYSICS_EXISTS
+--compilation-defines=MODULE_PHYSICS_2D_EXISTS
+--compilation-defines=MODULE_PARTICLE_SYSTEM_EXISTS
+--compilation-defines=DISABLE_BUILTIN_INPUT_SYSTEM_OCULUS
+--compilation-defines=UNITY_INPUT_SYSTEM_ENABLE_VR
+--compilation-defines=UNITY_INPUT_SYSTEM_ENABLE_XR
+--compilation-defines=UNITY_INPUT_SYSTEM_ENABLE_PHYSICS
+--compilation-defines=UNITY_INPUT_SYSTEM_ENABLE_PHYSICS2D
+--compilation-defines=UNITY_INPUT_SYSTEM_ENABLE_UI
+--compilation-defines=UNITY_INPUT_SYSTEM
+--compilation-defines=XR_MGMT_GTE_320
+--compilation-defines=TIMELINE_FRAMEACCURATE
+--compilation-defines=UNITY_ANALYTICS
+--compilation-defines=INPUT_SYSTEM_POSE_VALID
+--linker-options=PdbAltPath="My project_Data/Plugins/x86_64/lib_burst_generated.pdb"
+--generate-link-xml=Temp\burst.link.xml
+--temp-folder=C:\Users\matth\My project\Temp\Burst
+--output=C:\Users\matth\My project\Temp\StagingArea\Data\Plugins\x86_64\lib_burst_generated
+--pdb-search-paths=Temp/ManagedSymbols/
+--pdb-search-paths=Temp/ManagedSymbols/
+
+--method=Unity.Burst.BurstCompiler+BurstCompilerHelper, Unity.Burst, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::IsBurstEnabled()--8c2be93e18276203cbd918daa2748a10
+--method=Draco.DracoNative+GetDracoBonesJob, Draco, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::GetIndexValueUInt32(System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)--d9243ef576b1061749f44d626b49dcc0
+--method=Unity.Jobs.IJobExtensions+JobStruct`1[[Draco.DracoNative+GetDracoIndicesJob, Draco, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::Execute(Draco.DracoNative+GetDracoIndicesJob&, Draco, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|Unity.Jobs.LowLevel.Unsafe.JobRanges&, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)--ac3b0e8c2c46cf3455b7fe3c2cc26c52
+--method=Draco.DracoNative+GetDracoBonesJob, Draco, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::GetIndexValueUInt8(System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)--1c15df0b9e48563e6636fc9f543ce0bd
+--method=Unity.Burst.Intrinsics.X86, Unity.Burst, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::DoSetCSRTrampoline(System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)--da352d92cabf024fc9986011d52a4537
+--method=Draco.DracoNative+GetDracoBonesJob, Draco, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::GetIndexValueUInt16(System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)--34c75cca0939415e3bc308abf9235270
+--method=Unity.Jobs.IJobExtensions+JobStruct`1[[Draco.DracoNative+ReleaseDracoMeshJob, Draco, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::Execute(Draco.DracoNative+ReleaseDracoMeshJob&, Draco, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|Unity.Jobs.LowLevel.Unsafe.JobRanges&, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)--4503d74280ebce6b1e54f86f881d3fcd
+--method=Unity.Jobs.IJobExtensions+JobStruct`1[[Draco.DracoNative+GetDracoDataJob, Draco, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::Execute(Draco.DracoNative+GetDracoDataJob&, Draco, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|Unity.Jobs.LowLevel.Unsafe.JobRanges&, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)--41b5a8581e12e77286a472faad0fca08
+--method=Unity.Jobs.IJobExtensions+JobStruct`1[[Draco.DracoNative+DecodeVerticesJob, Draco, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::Execute(Draco.DracoNative+DecodeVerticesJob&, Draco, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|Unity.Jobs.LowLevel.Unsafe.JobRanges&, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)--fec6c60dcfad1076547245ef0ef5a171
+--method=Unity.Jobs.IJobExtensions+JobStruct`1[[Draco.DracoNative+GetDracoDataInterleavedJob, Draco, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::Execute(Draco.DracoNative+GetDracoDataInterleavedJob&, Draco, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|Unity.Jobs.LowLevel.Unsafe.JobRanges&, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)--e1ead0842842b17d4c9b7a2ec6d2573f
+--method=Draco.DracoNative+GetDracoBonesJob, Draco, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::GetIndexValueInt8(System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)--61e7b09b4ab715a419f288fb094b734a
+--method=Unity.Jobs.IJobExtensions+JobStruct`1[[Draco.DracoNative+DecodeJob, Draco, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::Execute(Draco.DracoNative+DecodeJob&, Draco, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|Unity.Jobs.LowLevel.Unsafe.JobRanges&, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)--5d1ae8c420b528a885a098cae663fc10
+--method=Draco.DracoNative+GetDracoBonesJob, Draco, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::GetIndexValueInt32(System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)--7e7e90141d6b12e3ddf509855cfe7b3d
+--method=Unity.Jobs.IJobExtensions+JobStruct`1[[Draco.DracoNative+GetDracoBonesJob, Draco, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::Execute(Draco.DracoNative+GetDracoBonesJob&, Draco, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|Unity.Jobs.LowLevel.Unsafe.JobRanges&, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)--0e24d7b760aec1f5f033b99f4a2d0670
+--method=Unity.Burst.Intrinsics.X86, Unity.Burst, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::DoGetCSRTrampoline()--89425a97f3f500fa810ad03f0c382542
+--method=Draco.DracoNative+GetDracoBonesJob, Draco, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::GetIndexValueInt16(System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)--3211160ab8b053fb8dc422c143310370
+--platform=Windows
+--backend=burst-llvm-14
+--target=AVX2
+--global-safety-checks-setting=Off
+--meta-data-generation=False
+--dump=Function
+--float-precision=Standard
+--compilation-defines=UNITY_2021_3_20
+--compilation-defines=UNITY_2021_3
+--compilation-defines=UNITY_2021
+--compilation-defines=UNITY_5_3_OR_NEWER
+--compilation-defines=UNITY_5_4_OR_NEWER
+--compilation-defines=UNITY_5_5_OR_NEWER
+--compilation-defines=UNITY_5_6_OR_NEWER
+--compilation-defines=UNITY_2017_1_OR_NEWER
+--compilation-defines=UNITY_2017_2_OR_NEWER
+--compilation-defines=UNITY_2017_3_OR_NEWER
+--compilation-defines=UNITY_2017_4_OR_NEWER
+--compilation-defines=UNITY_2018_1_OR_NEWER
+--compilation-defines=UNITY_2018_2_OR_NEWER
+--compilation-defines=UNITY_2018_3_OR_NEWER
+--compilation-defines=UNITY_2018_4_OR_NEWER
+--compilation-defines=UNITY_2019_1_OR_NEWER
+--compilation-defines=UNITY_2019_2_OR_NEWER
+--compilation-defines=UNITY_2019_3_OR_NEWER
+--compilation-defines=UNITY_2019_4_OR_NEWER
+--compilation-defines=UNITY_2020_1_OR_NEWER
+--compilation-defines=UNITY_2020_2_OR_NEWER
+--compilation-defines=UNITY_2020_3_OR_NEWER
+--compilation-defines=UNITY_2021_1_OR_NEWER
+--compilation-defines=UNITY_2021_2_OR_NEWER
+--compilation-defines=UNITY_2021_3_OR_NEWER
+--compilation-defines=PLATFORM_ARCH_64
+--compilation-defines=UNITY_64
+--compilation-defines=ENABLE_AR
+--compilation-defines=ENABLE_AUDIO
+--compilation-defines=ENABLE_CACHING
+--compilation-defines=ENABLE_CLOTH
+--compilation-defines=ENABLE_EVENT_QUEUE
+--compilation-defines=ENABLE_MICROPHONE
+--compilation-defines=ENABLE_MULTIPLE_DISPLAYS
+--compilation-defines=ENABLE_PHYSICS
+--compilation-defines=ENABLE_TEXTURE_STREAMING
+--compilation-defines=ENABLE_VIRTUALTEXTURING
+--compilation-defines=ENABLE_UNET
+--compilation-defines=ENABLE_LZMA
+--compilation-defines=ENABLE_UNITYEVENTS
+--compilation-defines=ENABLE_VR
+--compilation-defines=ENABLE_WEBCAM
+--compilation-defines=ENABLE_UNITYWEBREQUEST
+--compilation-defines=ENABLE_WWW
+--compilation-defines=ENABLE_CLOUD_SERVICES
+--compilation-defines=ENABLE_CLOUD_SERVICES_COLLAB
+--compilation-defines=ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS
+--compilation-defines=ENABLE_CLOUD_SERVICES_ADS
+--compilation-defines=ENABLE_CLOUD_SERVICES_USE_WEBREQUEST
+--compilation-defines=ENABLE_CLOUD_SERVICES_CRASH_REPORTING
+--compilation-defines=ENABLE_CLOUD_SERVICES_PURCHASING
+--compilation-defines=ENABLE_CLOUD_SERVICES_ANALYTICS
+--compilation-defines=ENABLE_CLOUD_SERVICES_UNET
+--compilation-defines=ENABLE_CLOUD_SERVICES_BUILD
+--compilation-defines=ENABLE_CLOUD_LICENSE
+--compilation-defines=ENABLE_EDITOR_HUB_LICENSE
+--compilation-defines=ENABLE_WEBSOCKET_CLIENT
+--compilation-defines=ENABLE_DIRECTOR_AUDIO
+--compilation-defines=ENABLE_DIRECTOR_TEXTURE
+--compilation-defines=ENABLE_MANAGED_JOBS
+--compilation-defines=ENABLE_MANAGED_TRANSFORM_JOBS
+--compilation-defines=ENABLE_MANAGED_ANIMATION_JOBS
+--compilation-defines=ENABLE_MANAGED_AUDIO_JOBS
+--compilation-defines=ENABLE_MANAGED_UNITYTLS
+--compilation-defines=INCLUDE_DYNAMIC_GI
+--compilation-defines=ENABLE_SCRIPTING_GC_WBARRIERS
+--compilation-defines=PLATFORM_SUPPORTS_MONO
+--compilation-defines=RENDER_SOFTWARE_CURSOR
+--compilation-defines=ENABLE_VIDEO
+--compilation-defines=ENABLE_ACCELERATOR_CLIENT_DEBUGGING
+--compilation-defines=PLATFORM_STANDALONE
+--compilation-defines=TEXTCORE_1_0_OR_NEWER
+--compilation-defines=PLATFORM_STANDALONE_WIN
+--compilation-defines=UNITY_STANDALONE_WIN
+--compilation-defines=UNITY_STANDALONE
+--compilation-defines=ENABLE_RUNTIME_GI
+--compilation-defines=ENABLE_MOVIES
+--compilation-defines=ENABLE_NETWORK
+--compilation-defines=ENABLE_NVIDIA
+--compilation-defines=ENABLE_CRUNCH_TEXTURE_COMPRESSION
+--compilation-defines=ENABLE_UNITY_GAME_SERVICES_ANALYTICS_SUPPORT
+--compilation-defines=ENABLE_OUT_OF_PROCESS_CRASH_HANDLER
+--compilation-defines=ENABLE_CLUSTER_SYNC
+--compilation-defines=ENABLE_CLUSTERINPUT
+--compilation-defines=PLATFORM_UPDATES_TIME_OUTSIDE_OF_PLAYER_LOOP
+--compilation-defines=GFXDEVICE_WAITFOREVENT_MESSAGEPUMP
+--compilation-defines=ENABLE_WEBSOCKET_HOST
+--compilation-defines=ENABLE_MONO
+--compilation-defines=NET_STANDARD_2_0
+--compilation-defines=NET_STANDARD
+--compilation-defines=NET_STANDARD_2_1
+--compilation-defines=NETSTANDARD
+--compilation-defines=NETSTANDARD2_1
+--compilation-defines=ENABLE_CUSTOM_RENDER_TEXTURE
+--compilation-defines=ENABLE_DIRECTOR
+--compilation-defines=ENABLE_LOCALIZATION
+--compilation-defines=ENABLE_SPRITES
+--compilation-defines=ENABLE_TERRAIN
+--compilation-defines=ENABLE_TILEMAP
+--compilation-defines=ENABLE_TIMELINE
+--compilation-defines=ENABLE_INPUT_SYSTEM
+--compilation-defines=ENABLE_LEGACY_INPUT_MANAGER
+--compilation-defines=TEXTCORE_FONT_ENGINE_1_5_OR_NEWER
+--compilation-defines=USE_INPUT_SYSTEM_POSE_CONTROL
+--compilation-defines=CSHARP_7_OR_LATER
+--compilation-defines=CSHARP_7_3_OR_NEWER
+--compilation-defines=PACKAGE_PHYSICS
+--compilation-defines=PACKAGE_PHYSICS2D
+--compilation-defines=PACKAGE_TILEMAP
+--compilation-defines=PACKAGE_ANIMATION
+--compilation-defines=PACKAGE_UITOOLKIT
+--compilation-defines=PACKAGE_INPUT_SYSTEM_EXISTS
+--compilation-defines=PACKAGE_INPUT_SYSTEM_1_2_0_OR_NEWER_EXISTS
+--compilation-defines=MODULE_AI_EXISTS
+--compilation-defines=MODULE_ANIMATION_EXISTS
+--compilation-defines=MODULE_PHYSICS_EXISTS
+--compilation-defines=MODULE_PHYSICS_2D_EXISTS
+--compilation-defines=MODULE_PARTICLE_SYSTEM_EXISTS
+--compilation-defines=DISABLE_BUILTIN_INPUT_SYSTEM_OCULUS
+--compilation-defines=UNITY_INPUT_SYSTEM_ENABLE_VR
+--compilation-defines=UNITY_INPUT_SYSTEM_ENABLE_XR
+--compilation-defines=UNITY_INPUT_SYSTEM_ENABLE_PHYSICS
+--compilation-defines=UNITY_INPUT_SYSTEM_ENABLE_PHYSICS2D
+--compilation-defines=UNITY_INPUT_SYSTEM_ENABLE_UI
+--compilation-defines=UNITY_INPUT_SYSTEM
+--compilation-defines=XR_MGMT_GTE_320
+--compilation-defines=TIMELINE_FRAMEACCURATE
+--compilation-defines=UNITY_ANALYTICS
+--compilation-defines=INPUT_SYSTEM_POSE_VALID
+--linker-options=PdbAltPath="My project_Data/Plugins/x86_64/lib_burst_generated.pdb"
+--generate-link-xml=Temp\burst.link.xml
+--temp-folder=C:\Users\matth\My project\Temp\Burst
+--output=C:\Users\matth\My project\Temp\StagingArea\Data\Plugins\x86_64\lib_burst_generated
+--pdb-search-paths=Temp/ManagedSymbols/
+--pdb-search-paths=Temp/ManagedSymbols/
+
+--method=Unity.Burst.BurstCompiler+BurstCompilerHelper, Unity.Burst, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::IsBurstEnabled()--8c2be93e18276203cbd918daa2748a10
+--method=Draco.DracoNative+GetDracoBonesJob, Draco, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::GetIndexValueUInt32(System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)--d9243ef576b1061749f44d626b49dcc0
+--method=Unity.Jobs.IJobExtensions+JobStruct`1[[Draco.DracoNative+GetDracoIndicesJob, Draco, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::Execute(Draco.DracoNative+GetDracoIndicesJob&, Draco, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|Unity.Jobs.LowLevel.Unsafe.JobRanges&, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)--ac3b0e8c2c46cf3455b7fe3c2cc26c52
+--method=Draco.DracoNative+GetDracoBonesJob, Draco, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::GetIndexValueUInt8(System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)--1c15df0b9e48563e6636fc9f543ce0bd
+--method=Unity.Burst.Intrinsics.X86, Unity.Burst, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::DoSetCSRTrampoline(System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)--da352d92cabf024fc9986011d52a4537
+--method=Draco.DracoNative+GetDracoBonesJob, Draco, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::GetIndexValueUInt16(System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)--34c75cca0939415e3bc308abf9235270
+--method=Unity.Jobs.IJobExtensions+JobStruct`1[[Draco.DracoNative+ReleaseDracoMeshJob, Draco, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::Execute(Draco.DracoNative+ReleaseDracoMeshJob&, Draco, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|Unity.Jobs.LowLevel.Unsafe.JobRanges&, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)--4503d74280ebce6b1e54f86f881d3fcd
+--method=Unity.Jobs.IJobExtensions+JobStruct`1[[Draco.DracoNative+GetDracoDataJob, Draco, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::Execute(Draco.DracoNative+GetDracoDataJob&, Draco, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|Unity.Jobs.LowLevel.Unsafe.JobRanges&, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)--41b5a8581e12e77286a472faad0fca08
+--method=Unity.Jobs.IJobExtensions+JobStruct`1[[Draco.DracoNative+DecodeVerticesJob, Draco, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::Execute(Draco.DracoNative+DecodeVerticesJob&, Draco, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|Unity.Jobs.LowLevel.Unsafe.JobRanges&, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)--fec6c60dcfad1076547245ef0ef5a171
+--method=Unity.Jobs.IJobExtensions+JobStruct`1[[Draco.DracoNative+GetDracoDataInterleavedJob, Draco, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::Execute(Draco.DracoNative+GetDracoDataInterleavedJob&, Draco, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|Unity.Jobs.LowLevel.Unsafe.JobRanges&, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)--e1ead0842842b17d4c9b7a2ec6d2573f
+--method=Draco.DracoNative+GetDracoBonesJob, Draco, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::GetIndexValueInt8(System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)--61e7b09b4ab715a419f288fb094b734a
+--method=Unity.Jobs.IJobExtensions+JobStruct`1[[Draco.DracoNative+DecodeJob, Draco, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::Execute(Draco.DracoNative+DecodeJob&, Draco, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|Unity.Jobs.LowLevel.Unsafe.JobRanges&, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)--5d1ae8c420b528a885a098cae663fc10
+--method=Draco.DracoNative+GetDracoBonesJob, Draco, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::GetIndexValueInt32(System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)--7e7e90141d6b12e3ddf509855cfe7b3d
+--method=Unity.Jobs.IJobExtensions+JobStruct`1[[Draco.DracoNative+GetDracoBonesJob, Draco, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::Execute(Draco.DracoNative+GetDracoBonesJob&, Draco, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|Unity.Jobs.LowLevel.Unsafe.JobRanges&, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)--0e24d7b760aec1f5f033b99f4a2d0670
+--method=Unity.Burst.Intrinsics.X86, Unity.Burst, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::DoGetCSRTrampoline()--89425a97f3f500fa810ad03f0c382542
+--method=Draco.DracoNative+GetDracoBonesJob, Draco, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::GetIndexValueInt16(System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)--3211160ab8b053fb8dc422c143310370
+
