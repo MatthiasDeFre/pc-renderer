@@ -12,30 +12,22 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using System.IO;
 
-public class L4SProxyTestMulti : MonoBehaviour
+public class PCReceiver : MonoBehaviour
 {
-    [DllImport("L4SProxyPlugin")]
-    static extern int init(string addr, UInt32 port, bool input, bool output);
-    //[DllImport("L4SProxyPlugin")]
-    //private static extern int setup_connection(string ip, UInt32 port);
-    //[DllImport("L4SProxyPlugin")]
-    //private static extern void start_listening();
-    // You need to define these functions
-    // [DllImport("L4SProxyPlugin")]
-    // private static extern int setup_connection(string ip);
-    //[DllImport("L4SProxyPlugin")]
-    //[DllImport("L4SProxyPlugin")]
-    //  private static extern int start_listening();
-    [DllImport("L4SProxyPlugin")]
+    [DllImport("PCStreamingPlugin")]
+    static extern int setup_connection(string addr, UInt32 port);
+    [DllImport("PCStreamingPlugin")]
+    private static extern int start_listening();
+    [DllImport("PCStreamingPlugin")]
     private static extern int next_frame();
-    [DllImport("L4SProxyPlugin")]
+    [DllImport("PCStreamingPlugin")]
     // You should technically be able to pass any type of pointer (array) to the plugin, however this has not yet been tested
     // This means that you should be able to pass an array of structures, i.e. points, and that the array should fill itself
     // And that you don't need to do any parsing in Unity (however, not yet tested)
-    private static extern int set_frame_data(byte[] points);
-    [DllImport("L4SProxyPlugin")]
+    private static extern int set_data(byte[] points);
+    [DllImport("PCStreamingPlugin")]
     private static extern void clean_up();
-    [DllImport("L4SProxyPlugin")]
+    [DllImport("PCStreamingPlugin")]
     private static extern int send_data_to_server(byte[] data, uint size);
     private MeshFilter meshFilter;
     private int num;
@@ -73,14 +65,9 @@ public class L4SProxyTestMulti : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // You'll want to change this ip to the ip of your WSL2 instance
         // If this functions returns 0 everything is fine, 1=>WSA startup error, 2=>socket creation error, 3=>sendto (L4S client) error
-        //Debug.Log(setup_connection("193.190.127.194"));
-        //Debug.Log(setup_connection("127.0.0.1", 8000));
-        //Debug.Log(setup_connection("172.21.44.43"));
-        init("127.0.0.1", 8000, true, false);
-        // Calling this function will start a thread to receive data from the L4S client
-        //start_listening();
+        Debug.Log(setup_connection("127.0.0.1", 8000));
+        start_listening();
         meshFilter =GetComponent<MeshFilter>();
         hqFilter= HQ.GetComponent<MeshFilter>();
         mqFilter = MQ.GetComponent<MeshFilter>();
@@ -195,7 +182,7 @@ public class L4SProxyTestMulti : MonoBehaviour
             frameReady = false;
             isDecoding = true;
             data = new byte[num];
-            set_frame_data(data);
+            set_data(data);
             nLayers = (int)BitConverter.ToUInt32(data, 12);
             
             //nLayers = 1;
