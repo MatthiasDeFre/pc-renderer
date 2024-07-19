@@ -11,11 +11,16 @@ using Unity.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using System.IO;
+using Unity.VisualScripting;
+using UnityEditor.PackageManager;
+using UnityEditor.Search;
+using System.Collections.Concurrent;
+using System.Threading;
 
 public class PCReceiver : MonoBehaviour
 {
     [DllImport("PCStreamingPlugin")]
-    static extern int setup_connection(string addr, UInt32 port);
+    static extern int setup_connection(string addr, UInt32 port, UInt32 self_port);
     [DllImport("PCStreamingPlugin")]
     private static extern int start_listening();
     [DllImport("PCStreamingPlugin")]
@@ -63,10 +68,19 @@ public class PCReceiver : MonoBehaviour
 
     private int quality = 0;
     // Start is called before the first frame update
+    public SessionInfo SessionInfo;
+    private Dictionary<int, DecodedPointCloud> inProgessFrames;
+    private ConcurrentQueue<DecodedPointCloud> queue;
+  //  private List<ConcurrentQueue<DecodeTask>> task_queue;
+    private Mutex mut = new Mutex();
+    private int lastCompletedFrameNr = -1;
+    private Thread wrk;
     void Start()
     {
+        queue = new();
+        inProgessFrames = new();
         // If this functions returns 0 everything is fine, 1=>WSA startup error, 2=>socket creation error, 3=>sendto (L4S client) error
-        Debug.Log(setup_connection("127.0.0.1", 8000));
+        Debug.Log(setup_connection(SessionInfo.cltAddr, (uint)SessionInfo.cltPort, (uint)SessionInfo.selfPort));
         start_listening();
         meshFilter =GetComponent<MeshFilter>();
         hqFilter= HQ.GetComponent<MeshFilter>();
@@ -78,131 +92,99 @@ public class PCReceiver : MonoBehaviour
         writer = new StreamWriter("output.csv", false);
         writer.WriteLine("frame_nr;dc_latency;interframe_latency;idle_time;quality;timestamp;size");
         writer.Flush();
+        wrk = new Thread(() => listenWork());
+        wrk.Start();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (decodeTasks.Count() > 0 && decodeTasks.All(t => t.IsCompleted))
+        if (!queue.IsEmpty)
         {
-            float decodeEnd = Time.realtimeSinceStartup;
-
-            //Debug.Log("decode complete" + decodeTask.Result + " " + data.Length.ToString());
-            isDecoding = false;
-            if (decodeTasks.All(t => t.Result.success))
+            DecodedPointCloud dec;
+            bool succes = queue.TryDequeue(out dec);
+            if (succes)
             {
-                //Debug.Log(meshDataArray[0].vertexCount);
-                int totalSize = 0;
-                for(int i = 0; i < nLayers; i++)
-                {
-                    totalSize+= meshDataArray[i].vertexCount;
-                }
-                // Apply onto new Mesh
                 Destroy(mesh);
                 mesh = new Mesh();
-                var col = new NativeArray<Color32>(totalSize, Allocator.TempJob);
-                var pos = new NativeArray<Vector3>(totalSize, Allocator.TempJob);
-                int offset = 0;
-                for (int i = 0; i < nLayers; i++)
-                {
-                    meshDataArray[i].GetColors(col.GetSubArray(offset, meshDataArray[i].vertexCount));
-                    meshDataArray[i].GetVertices(pos.GetSubArray(offset, meshDataArray[i].vertexCount));
-                    offset += meshDataArray[i].vertexCount;
-                }
-                //Debug.Log(meshDataArray[0].GetVertexData<float>().Length);
-                //Debug.Log(meshDataArray[0].vertexCount);
-                
-                //Mesh.ApplyAndDisposeWritableMeshData(meshDataArray,mesh);
-                mesh.indexFormat = totalSize > 65535 ?
+                mesh.indexFormat = dec.NPoints > 65535 ?
                         IndexFormat.UInt32 : IndexFormat.UInt16;
-
-                mesh.SetVertices(pos);
-                mesh.SetColors(col);
-
+                mesh.SetVertices(dec.Points);
+                mesh.SetColors(dec.Colors);
                 mesh.SetIndices(
                     Enumerable.Range(0, mesh.vertexCount).ToArray(),
                     MeshTopology.Points, 0
                 );
-
-                // Use the resulting mesh
+            //    Debug.Log(mesh.vertexCount);
                 mesh.UploadMeshData(true);
-
                 HQ.SetActive(false);
                 MQ.SetActive(false);
                 LQ.SetActive(false);
-                if(quality >= 60)
+                if (dec.Quality >= 60)
                 {
                     HQ.SetActive(true);
                     hqFilter.mesh = mesh;
-                    Debug.Log("HQ");
-                } else if(quality >= 40)
+                //    Debug.Log("HQ");
+                }
+                else if (dec.Quality >= 40)
                 {
                     MQ.SetActive(true);
                     mqFilter.mesh = mesh;
-                    Debug.Log("MQ");
-                } else
+                //    Debug.Log("MQ");
+                }
+                else
                 {
                     LQ.SetActive(true);
                     lqFilter.mesh = mesh;
-                    Debug.Log("LQ");
+                  //  Debug.Log("LQ");
                 }
-                //meshFilter.mesh = mesh;
-                col.Dispose();
-                pos.Dispose();
-                long currAnimationTime = DateTimeOffset.Now.ToUnixTimeMilliseconds();
-                long interframeLatency = currAnimationTime - previousAnimationTime;
-                long decodeEndTime = DateTimeOffset.Now.ToUnixTimeMilliseconds();
-                animLatency.text = interframeLatency.ToString() + "ms";
-                long decodeLatencyL = (decodeEndTime - decodeStartTime);
-                decodeLatency.text = decodeLatencyL.ToString() + "ms";
-                previousAnimationTime = currAnimationTime;
-               // writer.WriteLine($"{(currentFrame-1)};{decodeLatencyL};{interframeLatency};{frameIdleTime};{quality};{decodeEndTime};{numTemp}");
-                //writer.Flush();
+
             }
-            meshDataArray.Dispose();
-            decodeTasks.Clear();
-            sizes.Clear();
         }
-        if (!frameReady) {
-            num = next_frame();
-            int prevNum = num;
-            frameReady = true;
-            frameReadyTime = DateTimeOffset.Now.ToUnixTimeMilliseconds();
-        }
-        Debug.Log(num);
-        temp.text = num.ToString();
-        if (num > 50 && !isDecoding)
+    }
+    void OnApplicationQuit()
+    { 
+        writer.Close();
+        clean_up();
+    }
+    private void listenWork() {
+        bool keep_working = true;
+        while(keep_working)
         {
-            numTemp = num;
+            int num = next_frame();
+         //   Debug.Log($"f {num}");
+            if (num == -1)
+            {
+               
+                keep_working = false;
+                continue;
+            }
+            if(num < 50)
+            {
+                continue;
+            }
             quality = 0;
-            decodeStartTime = DateTimeOffset.Now.ToUnixTimeMilliseconds();
-            frameIdleTime = decodeStartTime - frameReadyTime;
-            frameReadyLatency.text = frameIdleTime.ToString() + "ms";
             currentFrame++;
-            frameReady = false;
-            isDecoding = true;
             data = new byte[num];
             set_data(data);
-            nLayers = (int)BitConverter.ToUInt32(data, 12);
-            
-            //nLayers = 1;
-            //UInt32 layerId = BitConverter.ToUInt32(data, 28);
-            meshDataArray = Mesh.AllocateWritableMeshData(nLayers);
-            // Debug.Log("start decoding " + data.Length.ToString());
-            int offset = 12 + 7 * 4;
-            for (int i= 0; i < nLayers; i++)
+            nLayers = (int)BitConverter.ToUInt32(data, 0);
+           // Debug.Log(nLayers);
+          //  meshDataArray = Mesh.AllocateWritableMeshData(nLayers);
+            int offset = 0 + 7 * 4;
+            inProgessFrames.Add(currentFrame, new DecodedPointCloud(currentFrame, nLayers));
+            for (int i = 0; i < nLayers; i++)
             {
                 UInt32 layerId = BitConverter.ToUInt32(data, offset);
-                switch(layerId)
+                switch (layerId)
                 {
                     case 0:
-                        quality += 60;
+                        quality = 60;
                         break;
                     case 1:
-                        quality += 25;
+                        quality = 25;
                         break;
                     case 2:
-                        quality += 15;
+                        quality = 15;
                         break;
                 }
                 offset += 4;
@@ -212,29 +194,74 @@ public class PCReceiver : MonoBehaviour
                 Array.Copy(data, offset, layerData, 0, layerSize);
                 offset += (int)layerSize;
                 sizes.Add((int)layerSize);
-                var draco = new DracoMeshLoader();
-                decodeTasks.Add(draco.ConvertDracoMeshToUnity(
-                    meshDataArray[i],
-                    layerData,
-                    false, // Set to true if you require normals. If Draco data does not contain them, they are allocated and we have to calculate them below
-                    false// Retrieve tangents is not supported, but this will ensure they are allocated and can be calculated later (see below)
-                ));
+                //Debug.Log($"{currentFrame} {layerSize}");
+                //var d = new Thread(() => decodeWork(new DecodeTask(currentFrame, (int)layerId, nLayers, (int)layerSize, quality, layerData)));
+                //d.
+                Task.Run(() => decodeWork(new DecodeTask(currentFrame, (int)layerId, nLayers, (int)layerSize, quality, layerData)));
             }
-            num = 0;
-            // Async decoding has to start on the main thread and spawns multiple C# jobs.
-            //decodeTask = 
         }
-       /* int p_size = next_frame();
-        if (p_size > 0)
-        {
-            byte[] p = new byte[p_size];
-            Console.WriteLine(p_size);
-            set_frame_data(p);
-        }*/
+        //Debug.Log("Stopped listening");
     }
-    void OnApplicationQuit()
+    public async Task decodeWork(DecodeTask dc)
     {
-        writer.Close();
-        clean_up();
+       // Debug.Log("start decode");
+        IntPtr decoderPtr = IntPtr.Zero;
+        unsafe
+        {
+            fixed (byte* ptr = dc.DescriptionData)
+            {
+                decoderPtr = DracoInvoker.decode_pc(ptr, (uint)dc.DescriptionSize);
+            }
+        }
+        if (decoderPtr == IntPtr.Zero)
+        {
+            Debug.Log($"Debug error at client {dc.DescriptionNr}");
+            return;
+        }
+        mut.WaitOne();
+        DecodedPointCloud pcData;
+        if (!inProgessFrames.TryGetValue(dc.FrameNr, out pcData))
+        {
+            DracoInvoker.free_decoder(decoderPtr);
+            Debug.Log($"Decoder freed, frame does not exit");
+            return;
+        }
+        UInt32 nDecodedPoints = DracoInvoker.get_n_points(decoderPtr);
+      
+        unsafe
+        {  
+            IntPtr pointsPtr = DracoInvoker.get_point_array(decoderPtr);
+            IntPtr colorPtr = DracoInvoker.get_color_array(decoderPtr);
+            float* pointsUnsafePtr = (float*)pointsPtr;
+            byte* colorsUnsafePtr = (byte*)colorPtr;
+
+            for (int i = 0; i < nDecodedPoints; i++)
+            {
+                //    points[i] = new Vector3(0, 0, 0);
+                pcData.Points.Add(new Vector3(pointsUnsafePtr[(i * 3)] * -1, pointsUnsafePtr[(i * 3) + 1] * -1, pointsUnsafePtr[(i * 3) + 2] * -1));
+                pcData.Colors.Add(new Color32(colorsUnsafePtr[(i * 3)], colorsUnsafePtr[(i * 3) + 1], colorsUnsafePtr[(i * 3) + 2], 255));
+            }
+        }
+        DracoInvoker.free_decoder(decoderPtr);
+      //  Debug.Log($"Decoder freed");
+        pcData.CurrentNDescriptions++;
+        pcData.NPoints += (int)nDecodedPoints;
+        pcData.Quality += dc.Quality;
+        if (pcData.IsCompleted)
+        {
+            if (dc.FrameNr % 10 == 0)
+            {
+               // Debug.Log($"Frame {dc.FrameNr} completed, last compl= {lastCompletedFrameNr}");
+            }
+
+            inProgessFrames.Remove(dc.FrameNr);
+            if (dc.FrameNr >= lastCompletedFrameNr)
+            {
+                lastCompletedFrameNr = pcData.FrameNr;
+                queue.Enqueue(pcData);
+            }
+
+        }
+        mut.ReleaseMutex();
     }
 }
