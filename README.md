@@ -11,7 +11,7 @@ This project requires several dependancies which are included in the Unity proje
 * [Pcx (point cloud renderer)](https://github.com/keijiro/Pcx)
 
 ## Usage
-* The application uses a config file to automatically start the WebRTC application.
+* The application uses a config file to automatically start the WebRTC application (you will probably only have to change the `srvAddr`).
 * The config file should be placed in a config directory situated at: [Application.dataPath](https://docs.unity3d.com/ScriptReference/Application-dataPath.html).
 * The peer application should be placed in a peer directory situated at: [Application.dataPath](https://docs.unity3d.com/ScriptReference/Application-dataPath.html).
 * You can find an example of both in the `Àssets` directory.
